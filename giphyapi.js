@@ -1,6 +1,6 @@
-var search = $(this).attr("data-name");
+var search = $(this).attr("image-input");
 
-var image = ["Toy Story", "Bug's Life", "Toy Story 2", "Incredibles"];
+var images = ["Toy Story", "Bug's Life", "Toy Story 2", "Incredibles"];
 
 //BROKEN, GO BACK  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ search +"?api_key=MefACdu3H6cYdsq06RCoHA7gmS8bJJUj";
 
@@ -27,7 +27,7 @@ console.log(queryURL);
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
         // Loops through the array of image
-        for (var i = 0; i < image.length; i++) {
+        for (var i = 0; i < images.length; i++) {
 
           // Then dynamicaly generates buttons for each image in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
@@ -35,9 +35,9 @@ console.log(queryURL);
           // Adds a class of image to our button
           a.addClass("image");
           // Added a data-attribute
-          a.attr("data-name", image[i]);
+          a.attr("data-name", images[i]);
           // Provided the initial button text
-          a.text(image[i]);
+          a.text(images[i]);
           // Added the button to the buttons-view div
           $("#buttons-view").append(a);
         }
@@ -56,21 +56,21 @@ $("#add-image").on("click", function(event) {
     renderButtons();
   });
 
-  renderButtons();
+
 
         //Add search topics
 
 
-$(document).on("click", "selector", function()
+        $(document).on("click", "",);
 {
-    $("imgages").empty();
+    $("images").empty();
     console.log(results);
 
 
 
 
-});
-
+};
+// renderButtons();
 
 
 
