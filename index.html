@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GIPHYGIPHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="giphyapi.js">
+    
+    </script>
+
+</head>
+
+<body>
+        <div class="container"><div id="gifs-appear-here">
+            </div>
+                <h1>Pixar Search</h1>
+            
+                <!-- Rendered buttons will get dumped here  -->
+                <div id="image-view"></div>
+                <div id="buttons-view"></div>
+            
+                <form id="image-form">
+                  <label for="image-input">Search something related to Pixar</label>
+                  <input type="text" id="image-input"><br>
+            
+                  <!-- Button triggers new term to be added -->
+                  <input id="add-image" type="submit" value="Add a Pixar term">
+                </form>
+            
+                <!-- images will get dumped here -->
+                <div id="images-view"></div>
+
+
+    <!-- posting script twice to keep things from getting messed up -->
+        <!-- <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+        <!-- Nevermind, don't need it -->
+
+    <script type="text/javascript">
+    </script>
+
+
+</body>
+
+</html>
