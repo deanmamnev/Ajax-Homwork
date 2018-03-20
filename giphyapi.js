@@ -63,6 +63,7 @@ $("#buttons-view").on("click", function (event) {
     console.log("Buttons CLICK WORKS");
     // This line of code will grab the input from the textbox
     var image = $("#image-input").val().trim();
+    console.log( $("#image-input").val().trim());
 
 
 
@@ -77,11 +78,43 @@ $("#buttons-view").on("click", function (event) {
         method: "GET"
     }).then(function (response) {
         console.log(response);    
+
+        var results = response.data;
         // The image from the textbox is then added to our array
-    
+        console.log(results.length);
+    for (var i = 0; i < results.length; i++) {
+console.log(results);
+            // Only taking action if the photo has an appropriate rating
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              // Creating a div with the class "item"
+              
+              var gifDiv = $("<div class='item'>");
+
+              // Storing the result item's rating
+              var rating = results[i].rating;
+
+              // Creating a paragraph tag with the result item's rating
+              var p = $("<p>").text("Rating: " + rating);
+
+              // Creating an image tag
+              var personImage = $("<img>");
+
+              // Giving the image tag an src attribute of a proprty pulled off the
+              // result item
+              personImage.attr("src", results[i].images.fixed_height.url);
+
+              // Appending the paragraph and personImage we created to the "gifDiv" div we created
+              gifDiv.append(p);
+              gifDiv.append(personImage);
+            
+
+              // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+              $("#images-view").prepend(gifDiv);
+            }
+          }
         var imagediv = $("<div id='imgDiv'>");
         var imagebucket = $("<img>")
-        imagediv.attr("src", getGif.data[i].images.fixed_height_small.url)
+        imagediv.attr("src", results.data[i].images.fixed_height_small.url)
 
     });
 });
